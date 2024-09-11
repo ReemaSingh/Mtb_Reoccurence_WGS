@@ -21,7 +21,7 @@
     RAW_READS = Directory with raw/cleaned FASTQ files
     TB_Results = Directory to store alignment results
 
-#### Step 4: De novo genome assembly
+#### Step 4: <i> De novo </i> genome assembly
 
     perl WGS_SIBP_P2.pl Prepare_Input.txt RAW_READS raw 35 Assembly
 
