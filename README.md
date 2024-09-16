@@ -34,15 +34,23 @@
 
     AssembledContigs = Directory containing all assembled genomes in fasta format
 
-#### Step 6: Spolingotyping
+#### Step 6: Coverage calculation
+##### Program version: fastqinfo-2.0
+##### Insert size calculation Example:
+       head -n 2 C09MB033185_i7-43_R1.fastq |tail -n 2|wc -c
+##### Coverage calculation Example:
+    fastq-info/bin/fastqinfo-2.0.sh -r 215 C09MB033185_i7-43_R1.fastq C09MB033185_i7-43_R2.fastq Genome.fasta
+    fastq-info/bin/fastqinfo-2.0.sh -r 215 C09MB033185_i7-43_R1.fastq C09MB033185_i7-43_R2.fastq ALL-Contigs/C09MB033185.fasta
+
+#### Step 7: Spolingotyping
 
      python Spolingotyping.py
 
-#### Step 7: Lineages and AMR prediction
+#### Step 8: Lineages and AMR prediction
 
      perl mykrobe_AMR.pl Prepare_Input.txt RAW_READS Lineage_AMR
 
-#### Step 8: Single nucleotide polymorphisms (SNPs) and phylogenetic analysis
+#### Step 9: Single nucleotide polymorphisms (SNPs) and phylogenetic analysis
 
       MTBseq --step TBfull --threads 30
       raxmlHPC -s TB_joint_cf4_cr4_fr75_ph4_samples50_amended_u95_phylo_w12.plainIDs.phy -m GTRGAMMA -p 12345 -# 200 -T 35 -n RecurrentTb 
