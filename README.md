@@ -50,10 +50,10 @@
 
      perl mykrobe_AMR.pl Prepare_Input.txt RAW_READS Lineage_AMR
 
-#### Author
-This script was originally created by Dr. Reema Singh (Email: res498@usask.ca)
-
 #### Step 9: Single nucleotide polymorphisms (SNPs) and phylogenetic analysis
 
       MTBseq --step TBfull --threads 30
       raxmlHPC -s TB_joint_cf4_cr4_fr75_ph4_samples50_amended_u95_phylo_w12.plainIDs.phy -m GTRGAMMA -p 12345 -# 200 -T 35 -n RecurrentTb 
+
+#### Author
+This script was originally created by Dr. Reema Singh (Email: res498@usask.ca)
